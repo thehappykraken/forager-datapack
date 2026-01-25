@@ -1,8 +1,10 @@
 {
   "values": [
-    "forager:effects/witherblade_tick"
+    "forager:effects/witherblade_tick",
+    "forager:systems/core_manager"
   ]
 }
+
 
 
 
