@@ -1,0 +1,3 @@
+summon iron_golem ~ ~ ~ {UUID:[I;3,3,3,3],Tags:["core_bait","faction_power_core"],CustomName:'{"text":"Power Conduit","color":"light_purple"}',CustomNameVisible:1b,PersistenceRequired:1b,NoAI:1b,Silent:1b,Invulnerable:0b,Health:60f,Attributes:[{Name:"minecraft:generic.max_health",Base:60f}],active_effects:[{id:"minecraft:invisibility",amplifier:0,duration:-1,show_particles:0b}],Passengers:[{id:"minecraft:block_display",Tags:["core_visual"],block_state:{Name:"minecraft:budding_amethyst"},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.5f,0f,-0.5f],scale:[1f,1f,1f]}}]}
+
+bossbar set forager:power_core max 60

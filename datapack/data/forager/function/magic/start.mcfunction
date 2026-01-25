@@ -1,0 +1,1 @@
+schedule function forager:magic/loop 1t
