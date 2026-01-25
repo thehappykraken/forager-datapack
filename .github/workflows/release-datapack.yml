@@ -47,6 +47,9 @@ jobs:
           echo "Detected branch: $BRANCH"
           # Primary version prefix comes from workflow input (e.g. v1.0)
           PRIMARY="${{ github.event.inputs.primary_version }}"
+          if [[ -z $PRIMARY ]]; then
+            PRIMARY=v1.0
+          fi
           echo "Primary version prefix: $PRIMARY"
 
           # Escape dots for regex usage
