@@ -1,0 +1,17 @@
+{
+  "display": {
+    "icon": { "id": "minecraft:chest" },
+    "title": { "text": "Merry Christmas", "color": "red" },
+    "description": { "text": "Merry Christmas from The Happy Kraken", "color": "green" },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "forager:event/event_root",
+  "criteria": {
+  },
+  "rewards": {
+    "loot": ["forager:event/christmas_2025"]
+  }
+}

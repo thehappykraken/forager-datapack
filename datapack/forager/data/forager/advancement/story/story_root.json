@@ -1,0 +1,18 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:book"
+    },
+    "title": "Atherian Chronicles",
+    "description": "The Atherian Chronicles",
+    "frame": "goal",
+    "show_toast": false,
+    "announce_to_chat": false
+  },
+  "parent": "forager:root",
+  "criteria": {
+    "loaded": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

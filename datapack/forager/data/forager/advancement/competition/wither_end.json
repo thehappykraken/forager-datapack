@@ -1,0 +1,34 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:nether_star"
+    },
+    "title": {
+      "text": "An End to the Abyss"
+    },
+    "description": {
+      "text": "Destroy the totem of the Abyssal Vein"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "forager:competition/competition_root",
+  "criteria": {
+    "kill_wither_in_end": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:wither"
+        },
+        "location": {
+          "dimension": "minecraft:the_end"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "forager:rewards/summon_witherblade_trader"
+  }
+}

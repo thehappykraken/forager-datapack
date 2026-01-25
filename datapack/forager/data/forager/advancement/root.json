@@ -1,0 +1,18 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:diamond_ore"
+    },
+    "title": "Forager",
+    "description": "Forager Advancements",
+    "background": "minecraft:block/crying_obsidian",
+    "frame": "challenge",
+    "show_toast": false,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "loaded": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

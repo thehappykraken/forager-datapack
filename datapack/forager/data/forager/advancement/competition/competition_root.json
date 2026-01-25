@@ -1,0 +1,18 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:diamond_sword"
+    },
+    "title": "Competitions",
+    "description": "Forager Competition Rewards",
+    "frame": "challenge",
+    "show_toast": false,
+    "announce_to_chat": false
+  },
+  "parent": "forager:root",
+  "criteria": {
+    "loaded": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

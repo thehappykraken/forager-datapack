@@ -1,0 +1,120 @@
+{
+  "type": "minecraft:advancement_reward",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:red_shulker_box",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 1
+            },
+            {
+              "function": "minecraft:set_name",
+              "entity": "this",
+              "name": "Christmas Present"
+            },
+            {
+              "function": "minecraft:set_lore",
+              "entity": "this",
+              "lore": [
+                {
+                  "text": "to ",
+                  "italic": false
+                },
+                {
+                  "selector": "@s"
+                }
+              ],
+              "mode":"replace_all"
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:container": [
+                  {
+                    "slot": 3,
+                    "item": {
+                      "id": "minecraft:diamond",
+                      "count": 16
+                    }
+                  },
+                  {
+                    "slot": 4,
+                    "item": {
+                      "id": "minecraft:netherite_ingot",
+                      "count": 1
+                    }
+                  },
+                  {
+                    "slot": 5,
+                    "item": {
+                      "id": "minecraft:diamond",
+                      "count": 16
+                    }
+                  },
+                  {
+                    "slot": 12,
+                    "item": {
+                      "id": "minecraft:amethyst_shard",
+                      "count": 16
+                    }
+                  },
+                  {
+                    "slot": 13,
+                    "item": {
+                      "id":"minecraft:written_book",
+                      "count": 1,
+                      "components": {
+                        "minecraft:written_book_content": {
+                          "title": "Merry Christmas",
+                          "author": "The Happy Kraken",
+                          "pages": [
+                            {
+                              "text": "Merry Christmas from The Happy Kraken"
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "slot": 14,
+                    "item": {
+                      "id": "minecraft:amethyst_shard",
+                      "count": 16
+                    }
+                  },
+                  {
+                    "slot": 21,
+                    "item": {
+                      "id": "minecraft:emerald",
+                      "count": 32
+                    }
+                  },
+                  {
+                    "slot": 22,
+                    "item": {
+                      "id": "minecraft:redstone",
+                      "count": 64
+                    }
+                  },
+                  {
+                    "slot": 23,
+                    "item": {
+                      "id": "minecraft:emerald",
+                      "count": 32
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+name: Release datapack
+
+on:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - 'resources/**'
+      
+  pull_request:
+    branches:
+      - 'main'
+    paths:
+      - 'resources/**'
+
+  workflow_dispatch:
+    inputs:
+      primary_version:
+        description: 'Primary version (e.g., v1.0) used as the major.minor prefix for tags'
+        required: true
+        default: 'v1.0'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: github-arc-custom-runners
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Determine version
+        id: determine_version
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --tags
+          # Determine branch name (works for workflow_dispatch)
+          BRANCH="${GITHUB_REF#refs/heads/}"
+          if [ "$BRANCH" = "$GITHUB_REF" ]; then
+            BRANCH="${GITHUB_HEAD_REF:-$GITHUB_REF}"
+            BRANCH="${BRANCH#refs/heads/}"
+          fi
+          echo "Detected branch: $BRANCH"
+          # Primary version prefix comes from workflow input (e.g. v1.0)
+          PRIMARY="${{ github.event.inputs.primary_version }}"
+          echo "Primary version prefix: $PRIMARY"
+
+          # Escape dots for regex usage
+          ESCAPED_PRIMARY="${PRIMARY//./\.}"
+
+          # Find max patch number among tags like <PRIMARY>.<num> (ignore optional .beta suffix)
+          MAX=0
+          for t in $(git tag --list "${PRIMARY}.*"); do
+            if [[ "$t" =~ ^${ESCAPED_PRIMARY}\.([0-9]+)(\.beta)?$ ]]; then
+              num=${BASH_REMATCH[1]}
+              if (( num > MAX )); then
+                MAX=$num
+              fi
+            fi
+          done
+          NEW=$((MAX+1))
+          VERSION="${PRIMARY}.${NEW}"
+          PRERELEASE=false
+          if [ "$BRANCH" != "main" ]; then
+            VERSION="${VERSION}.beta"
+            PRERELEASE=true
+          fi
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "PRERELEASE=$PRERELEASE" >> $GITHUB_ENV
+          echo "BRANCH=$BRANCH" >> $GITHUB_ENV
+          # Expose values as step outputs so later steps can reference them via steps.<id>.outputs
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "prerelease=$PRERELEASE" >> $GITHUB_OUTPUT
+          echo "Version will be: $VERSION"
+
+      - name: Zip datapack folder
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ ! -d "datapack" ]; then
+            echo "datapack directory not found in repo root"
+            ls -la
+            exit 1
+          fi
+          rm -f "forager-datapack-${VERSION}.zip"
+          pushd datapack >/dev/null
+          zip -r "../forager-datapack-${VERSION}.zip" .
+          popd >/dev/null
+          ls -lh "forager-datapack-${VERSION}.zip"
+
+      - name: Create GitHub release and upload asset
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ steps.determine_version.outputs.version }}
+          name: ${{ steps.determine_version.outputs.version }}
+          artifacts: forager-datapack-${{ steps.determine_version.outputs.version }}.zip
+          draft: false
+          prerelease: ${{ steps.determine_version.outputs.prerelease }}

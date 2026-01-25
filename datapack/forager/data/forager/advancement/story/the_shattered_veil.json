@@ -1,0 +1,18 @@
+{
+  "display": {
+    "icon": { "id": "minecraft:ender_eye" },
+    "title": { "text": "Chapter I: The Shattered Veil", "color": "gold" },
+    "description": { "text": "The Founding Record of the Shattered Veil", "color": "gray" },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "forager:story/story_root",
+  "criteria": {
+    "join_world": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}
+

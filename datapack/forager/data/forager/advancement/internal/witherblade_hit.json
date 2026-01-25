@@ -1,0 +1,27 @@
+{
+  "criteria": {
+    "hit_with_witherblade": {
+      "trigger": "minecraft:player_hurt_entity",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "slots": {
+                "weapon.mainhand": {
+                  "predicates": {
+                    "minecraft:custom_data": { "witherblade": 1 }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "forager:effects/witherblade_on_hit"
+  }
+}
