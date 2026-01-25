@@ -27,9 +27,16 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
+      - name: Create GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ github.repository.vars.APP_ID }}
+          private-key: ${{ github.repository.secrets.APP_PRIVATE_KEY }}
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          token: ${{ steps.app-token.outputs.token }}
           fetch-depth: 0
 
       - name: Determine version
@@ -103,3 +110,4 @@ jobs:
           artifacts: forager-datapack-${{ steps.determine_version.outputs.version }}.zip
           draft: false
           prerelease: ${{ steps.determine_version.outputs.prerelease }}
+          token: ${{ steps.app-token.outputs.token }}
