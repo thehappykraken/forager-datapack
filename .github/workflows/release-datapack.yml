@@ -25,11 +25,18 @@ permissions:
 
 jobs:
   release:
-    runs-on: github-arc-custom-runners
+    runs-on: ubuntu-latest
     steps:
+      - name: Create GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ vars.THK_ARC_APP_ID }}
+          private-key: ${{ secrets.THK_ARC_PRIVATE_KEY }}
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          token: ${{ steps.app-token.outputs.token }}
           fetch-depth: 0
 
       - name: Determine version
@@ -47,6 +54,9 @@ jobs:
           echo "Detected branch: $BRANCH"
           # Primary version prefix comes from workflow input (e.g. v1.0)
           PRIMARY="${{ github.event.inputs.primary_version }}"
+          if [[ -z $PRIMARY ]]; then
+            PRIMARY=v1.0
+          fi
           echo "Primary version prefix: $PRIMARY"
 
           # Escape dots for regex usage
@@ -100,3 +110,4 @@ jobs:
           artifacts: forager-datapack-${{ steps.determine_version.outputs.version }}.zip
           draft: false
           prerelease: ${{ steps.determine_version.outputs.prerelease }}
+          token: ${{ steps.app-token.outputs.token }}
