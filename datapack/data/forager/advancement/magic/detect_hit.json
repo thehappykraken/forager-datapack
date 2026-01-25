@@ -1,0 +1,10 @@
+{
+  "criteria": {
+    "hit_mob": {
+      "trigger": "minecraft:player_hurt_entity"
+    }
+  },
+  "rewards": {
+    "function": "forager:magic/handle_hit"
+  }
+}

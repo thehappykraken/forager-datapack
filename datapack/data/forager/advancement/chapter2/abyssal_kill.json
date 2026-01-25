@@ -1,0 +1,15 @@
+{
+  "criteria": {
+    "abyssal_kill": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "nbt": "{Tags:[\"abyssal_mob\"]}"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "forager:onslaught/abyssal_kill_reward"
+  }
+}
