@@ -10,6 +10,9 @@
   },
   "parent": "forager:event/event_root",
   "criteria": {
+    "custom_criterion": {
+      "trigger": "minecraft:impossible"
+    }
   },
   "rewards": {
     "loot": ["forager:event/christmas_2025"]
