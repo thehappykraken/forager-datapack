@@ -1,6 +1,9 @@
 {
   "values": [
-    "forager:load_dispatch"
+    "forager:load_dispatch",
+    "forager:systems/core_init",
+    "forager:magic/start"
   ]
 }
+
 
