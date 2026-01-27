@@ -44,3 +44,42 @@ summon evoker 28 46 -92 {Tags:["abyssal_mob","wave6_evoker"],Attributes:[{Name:"
 
 summon evoker 25 46 -99 {Tags:["abyssal_mob","wave6_evoker"],Attributes:[{Name:"minecraft:follow_range",Base:100f}]}
 summon evoker 31 46 -99 {Tags:["abyssal_mob","wave6_evoker"],Attributes:[{Name:"minecraft:follow_range",Base:100f}]}
+
+#--- ENDERMEN (Nightmare Fuel) ---#
+
+# North Flank
+summon enderman 24 46 -60 {Tags:["abyssal_mob"],Attributes:[{Name:"minecraft:follow_range",Base:100f},{Name:"minecraft:movement_speed",Base:0.45f}]}
+summon enderman 28 46 -60 {Tags:["abyssal_mob"],Attributes:[{Name:"minecraft:follow_range",Base:100f},{Name:"minecraft:movement_speed",Base:0.45f}]}
+summon enderman 32 46 -60 {Tags:["abyssal_mob"],Attributes:[{Name:"minecraft:follow_range",Base:100f},{Name:"minecraft:movement_speed",Base:0.45f}]}
+summon enderman 26 46 -65 {Tags:["abyssal_mob"],Attributes:[{Name:"minecraft:follow_range",Base:100f},{Name:"minecraft:movement_speed",Base:0.45f}]}
+summon enderman 30 46 -65 {Tags:["abyssal_mob"],Attributes:[{Name:"minecraft:follow_range",Base:100f},{Name:"minecraft:movement_speed",Base:0.45f}]}
+
+# South Flank
+summon enderman 24 46 -104 {Tags:["abyssal_mob"],Attributes:[{Name:"minecraft:follow_range",Base:100f},{Name:"minecraft:movement_speed",Base:0.45f}]}
+summon enderman 28 46 -104 {Tags:["abyssal_mob"],Attributes:[{Name:"minecraft:follow_range",Base:100f},{Name:"minecraft:movement_speed",Base:0.45f}]}
+summon enderman 32 46 -104 {Tags:["abyssal_mob"],Attributes:[{Name:"minecraft:follow_range",Base:100f},{Name:"minecraft:movement_speed",Base:0.45f}]}
+summon enderman 26 46 -99 {Tags:["abyssal_mob"],Attributes:[{Name:"minecraft:follow_range",Base:100f},{Name:"minecraft:movement_speed",Base:0.45f}]}
+summon enderman 30 46 -99 {Tags:["abyssal_mob"],Attributes:[{Name:"minecraft:follow_range",Base:100f},{Name:"minecraft:movement_speed",Base:0.45f}]}
+
+# Center Mass (Direct line toward X:73)
+summon enderman 24 46 -82 {Tags:["abyssal_mob"],Attributes:[{Name:"minecraft:follow_range",Base:100f},{Name:"minecraft:movement_speed",Base:0.45f}]}
+summon enderman 26 46 -82 {Tags:["abyssal_mob"],Attributes:[{Name:"minecraft:follow_range",Base:100f},{Name:"minecraft:movement_speed",Base:0.45f}]}
+summon enderman 28 46 -82 {Tags:["abyssal_mob"],Attributes:[{Name:"minecraft:follow_range",Base:100f},{Name:"minecraft:movement_speed",Base:0.45f}]}
+summon enderman 30 46 -82 {Tags:["abyssal_mob"],Attributes:[{Name:"minecraft:follow_range",Base:100f},{Name:"minecraft:movement_speed",Base:0.45f}]}
+summon enderman 32 46 -82 {Tags:["abyssal_mob"],Attributes:[{Name:"minecraft:follow_range",Base:100f},{Name:"minecraft:movement_speed",Base:0.45f}]}
+summon enderman 28 46 -75 {Tags:["abyssal_mob"],Attributes:[{Name:"minecraft:follow_range",Base:100f},{Name:"minecraft:movement_speed",Base:0.45f}]}
+summon enderman 28 46 -89 {Tags:["abyssal_mob"],Attributes:[{Name:"minecraft:follow_range",Base:100f},{Name:"minecraft:movement_speed",Base:0.45f}]}
+summon enderman 25 46 -78 {Tags:["abyssal_mob"],Attributes:[{Name:"minecraft:follow_range",Base:100f},{Name:"minecraft:movement_speed",Base:0.45f}]}
+summon enderman 31 46 -86 {Tags:["abyssal_mob"],Attributes:[{Name:"minecraft:follow_range",Base:100f},{Name:"minecraft:movement_speed",Base:0.45f}]}
+summon enderman 25 46 -86 {Tags:["abyssal_mob"],Attributes:[{Name:"minecraft:follow_range",Base:100f},{Name:"minecraft:movement_speed",Base:0.45f}]}
+summon enderman 31 46 -78 {Tags:["abyssal_mob"],Attributes:[{Name:"minecraft:follow_range",Base:100f},{Name:"minecraft:movement_speed",Base:0.45f}]}
+summon enderman 27 46 -80 {Tags:["abyssal_mob"],Attributes:[{Name:"minecraft:follow_range",Base:100f},{Name:"minecraft:movement_speed",Base:0.45f}]}
+summon enderman 29 46 -84 {Tags:["abyssal_mob"],Attributes:[{Name:"minecraft:follow_range",Base:100f},{Name:"minecraft:movement_speed",Base:0.45f}]}
+summon enderman 24 46 -70 {Tags:["abyssal_mob"],Attributes:[{Name:"minecraft:follow_range",Base:100f},{Name:"minecraft:movement_speed",Base:0.45f}]}
+summon enderman 32 46 -70 {Tags:["abyssal_mob"],Attributes:[{Name:"minecraft:follow_range",Base:100f},{Name:"minecraft:movement_speed",Base:0.45f}]}
+summon enderman 24 46 -94 {Tags:["abyssal_mob"],Attributes:[{Name:"minecraft:follow_range",Base:100f},{Name:"minecraft:movement_speed",Base:0.45f}]}
+summon enderman 32 46 -94 {Tags:["abyssal_mob"],Attributes:[{Name:"minecraft:follow_range",Base:100f},{Name:"minecraft:movement_speed",Base:0.45f}]}
+summon enderman 27 46 -72 {Tags:["abyssal_mob"],Attributes:[{Name:"minecraft:follow_range",Base:100f},{Name:"minecraft:movement_speed",Base:0.45f}]}
+summon enderman 29 46 -92 {Tags:["abyssal_mob"],Attributes:[{Name:"minecraft:follow_range",Base:100f},{Name:"minecraft:movement_speed",Base:0.45f}]}
+summon enderman 28 46 -82 {Tags:["abyssal_mob"],Attributes:[{Name:"minecraft:follow_range",Base:100f},{Name:"minecraft:movement_speed",Base:0.45f}]}
+
