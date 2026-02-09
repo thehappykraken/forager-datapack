@@ -1,9 +1,9 @@
 {
   "values": [
     "forager:load_dispatch",
-    "forager:systems/core_init",
-    "forager:magic/start"
+    "forager:effects/invis_loop"
   ]
 }
+
 
 
