@@ -1,9 +1,9 @@
 {
   "values": [
-    "forager:effects/witherblade_tick",
-    "forager:systems/core_manager"
+    "forager:effects/invis_zone"
   ]
 }
+
 
 
 
